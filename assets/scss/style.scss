@@ -1,0 +1,30 @@
+@charset 'utf-8';
+
+/* Core variables and mixins */
+@import "imports/core/libs";
+@import "imports/core/reset";
+@import "imports/core/variables";
+@import "imports/core/mixins";
+@import "imports/core/layouts";
+@import "imports/core/components";
+
+/* header, footer */
+@import "imports/core/header";
+@import "imports/core/footer";
+
+/* pages */
+@import "imports/pages/home";
+@import "imports/pages/about";
+@import "imports/pages/access";
+@import "imports/pages/admission";
+@import "imports/pages/contact";
+@import "imports/pages/daily";
+@import "imports/pages/education";
+@import "imports/pages/news";
+@import "imports/pages/support";
+@import "imports/pages/teacher";
+@import "imports/pages/error";
+
+
+/* utils */
+@import "imports/core/utils";

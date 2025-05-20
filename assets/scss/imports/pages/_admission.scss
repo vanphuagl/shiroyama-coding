@@ -1,0 +1,199 @@
+/* -------------------------------------------------------------------------- */
+/*                               admission page                               */
+/* -------------------------------------------------------------------------- */
+
+.admissionpage {
+  // ===== faq =====
+  .faq {
+    &_container {
+      margin-top: 340px;
+    }
+
+    &_items {
+      margin-top: 95px;
+
+      h3 {
+        font-size: 2.4rem;
+        font-weight: 600;
+        letter-spacing: -0.48px;
+        line-height: 1.88;
+        padding-left: 35px;
+        position: relative;
+
+        &:after {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 9px;
+          height: 9px;
+          border: 7px solid $yellow-cl;
+          border-radius: 50%;
+          background: transparent;
+        }
+      }
+    }
+
+    @include maxW(1023px) {
+      &_container {
+        margin-top: 95px;
+      }
+
+      &_wrapper {
+        padding: 0 !important;
+      }
+
+      &_items {
+        margin-top: 55px;
+
+        h3 {
+          font-size: 1.8rem;
+          letter-spacing: -0.36px;
+          line-height: 1.83;
+          padding-left: 30px;
+
+          &:after {
+            width: 8px;
+            height: 8px;
+            border: 5px solid $yellow-cl;
+          }
+        }
+      }
+    }
+
+    &_accordion {
+      position: relative;
+      border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
+
+      &:nth-of-type(1) {
+        margin-top: 50px;
+        border-top: 1px solid rgba($color: #000000, $alpha: 0.1);
+      }
+
+      &_btn {
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: center;
+        gap: 30px;
+        padding: 35px 0;
+        cursor: pointer;
+
+        &.--active {
+          .faq_accordion_plus {
+            transform: rotate(45deg);
+          }
+        }
+      }
+
+      &_panel {
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: flex-start;
+        gap: 30px;
+        max-height: 0;
+        overflow: hidden;
+        -webkit-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+      }
+
+      &_word {
+        padding-left: 30px;
+        font-family: $en-fonts;
+        font-size: 2.2rem;
+        font-weight: 500;
+        letter-spacing: 2.2px;
+        color: $yellow-cl;
+      }
+
+      &_title,
+      &_desc {
+        width: 83%;
+        font-size: 1.6rem;
+        font-weight: 500;
+        letter-spacing: -0.32px;
+        line-height: 2;
+        text-align: justify;
+        font-feature-settings: "palt" 1;
+      }
+
+      &_desc {
+        margin-bottom: 60px;
+        margin-top: -1px;
+      }
+
+      &_plus {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        right: 30px;
+        transition: transform 0.2s linear;
+
+        &:after,
+        &:before {
+          content: "";
+          position: absolute;
+          background-color: black;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        &::before {
+          width: 15px;
+          height: 2px;
+        }
+
+        &::after {
+          width: 2px;
+          height: 15px;
+        }
+      }
+
+      @include maxW(1023px) {
+        &:nth-of-type(1) {
+          margin-top: 40px;
+        }
+
+        &_btn {
+          gap: 15px;
+          padding: 20px 0;
+        }
+
+        &_panel {
+          gap: 15px;
+          align-items: center;
+        }
+
+        &_word {
+          padding-left: 15px;
+          font-size: 1.6rem;
+          letter-spacing: 1.6px;
+        }
+
+        &_title,
+        &_desc {
+          font-size: 1.3rem;
+          letter-spacing: -0.26px;
+          line-height: 1.81;
+        }
+
+        &_plus {
+          width: 11px;
+          height: 11px;
+          right: 20px;
+
+          &:before {
+            width: 11px;
+          }
+
+          &:after {
+            height: 11px;
+          }
+        }
+      }
+    }
+  }
+}

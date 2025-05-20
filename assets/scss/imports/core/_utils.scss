@@ -1,0 +1,68 @@
+/* Utils
+------------------------------------------------------------*/
+
+/* font family */
+.montserrat-fonts {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-optical-sizing: auto;
+}
+
+.dnp-fonts {
+  font-family: "dnp-shuei-gothic-gin-std", sans-serif;
+  font-style: normal;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+/* fade content */
+[data-fadein] {
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  transition-delay: 0.3s;
+
+  &.--inview {
+    opacity: 1;
+  }
+}
+
+/* lazy load */
+.lazy {
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+  &.loaded {
+    opacity: 1;
+  }
+}
+
+/* only device */
+
+.sp-only,
+.is-hidden {
+  display: none !important;
+}
+
+@include maxW(1023px) {
+  .pc-only {
+    display: none !important;
+  }
+
+  .sp-only {
+    display: block !important;
+  }
+}
