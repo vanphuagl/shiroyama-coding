@@ -2,7 +2,6 @@
 
 // ===== init =====
 const init = () => {
-  document.body.classList.remove("fadeout");
   // # app height
   appHeight();
   // # lazy load
@@ -198,4 +197,7 @@ if (document.querySelector("[data-accordion-btn]")) {
 }
 
 // ### ===== DOMCONTENTLOADED ===== ###
+window.addEventListener("pageshow", () => {
+  document.body.classList.remove("fadeout");
+});
 window.addEventListener("DOMContentLoaded", init);

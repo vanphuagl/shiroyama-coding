@@ -383,6 +383,7 @@
           height: 64px;
 
           &:after {
+            right: 20px;
             content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="22.414" height="12.829" viewBox="0 0 22.414 12.829"><g transform="translate(-1337 -606.586)"><line x2="20" transform="translate(1338 613)" fill="none" stroke="%23000" stroke-linecap="round" stroke-width="2"/><line x1="5" y1="5" transform="translate(1353 608)" fill="none" stroke="%23000" stroke-linecap="round" stroke-width="2"/><line y1="5" x2="5" transform="translate(1353 613)" fill="none" stroke="%23000" stroke-linecap="round" stroke-width="2"/></g></svg>');
           }
         }

@@ -307,56 +307,22 @@
 
     &_btn {
       margin-top: 80px;
-      position: relative;
-      width: 100%;
       height: 90px;
-      background-color: transparent;
-      border: 2px solid $black-cl;
-      border-radius: 5px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      font-size: 2rem;
-      font-weight: 600;
-      letter-spacing: -0.4px;
-
-      transition: all 0.2s ease-in-out;
-
-      &:hover {
-        background-color: $yellow-cl;
-        border-color: $yellow-cl;
-        color: $white-cl;
-        opacity: 1;
-
-        svg {
-          line {
-            stroke: $white-cl;
-          }
-        }
-      }
+      font-size: 1.9rem;
+      letter-spacing: -0.380px;
 
       svg {
-        position: absolute;
         right: 40px;
-        top: 50%;
-        transform: translateY(-50%);
-
-        line {
-          transition: all 0.2s ease-in-out;
-        }
       }
 
       @include maxW(1023px) {
         margin-top: 58px;
         height: 64px;
         font-size: 1.5rem;
+        letter-spacing: -0.3px;
 
         svg {
           right: 25px;
-          width: 20px;
-          height: auto;
         }
       }
     }
@@ -719,41 +685,8 @@
 
     &_btn {
       margin-top: 85px;
-      position: relative;
-      width: 100%;
-      height: 70px;
-      border: 2px solid $black-cl;
-      border-radius: 5px;
-      background-color: transparent;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      font-size: 1.7rem;
-      font-weight: 600;
-      letter-spacing: -0.34px;
-
-      transition: all 0.2s ease-in-out;
-
-      svg {
-        position: absolute;
-        top: 50%;
-        right: 30px;
-        transform: translateY(-50%);
-
-        g,
-        rect {
-          transition: all 0.2s ease-in-out;
-        }
-      }
 
       &:hover {
-        background-color: $yellow-cl;
-        border-color: $yellow-cl;
-        color: $white-cl;
-        opacity: 1;
-
         svg {
           g {
             stroke: $white-cl;
@@ -835,14 +768,9 @@
 
       &_btn {
         margin-top: 57px;
-        height: 64px;
-        font-size: 1.5rem;
-        letter-spacing: -0.3px;
 
         svg {
           width: 14.38px;
-          height: auto;
-          right: 25px;
         }
       }
 
