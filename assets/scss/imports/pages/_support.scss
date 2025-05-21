@@ -5,6 +5,111 @@
 .supportpage {
   // ===== support =====
   .support {
+    &_for {
+      &_content {
+        margin-top: 140px;
+      }
+
+      &_list {
+        margin-top: 55px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 60px 40px;
+      }
+
+      &_items {
+        h3 {
+          margin-top: 25px;
+          font-size: 1.6rem;
+          font-weight: 600;
+          letter-spacing: -0.32px;
+          line-height: 1.56;
+          text-align: justify;
+          font-feature-settings: "palt" 1;
+        }
+
+        p.desc {
+          margin-top: 30px;
+          font-size: 1.6rem;
+          font-weight: 500;
+          letter-spacing: -0.48px;
+          line-height: 1.88;
+          text-align: justify;
+          font-feature-settings: "palt" 1;
+        }
+
+        figure {
+          display: block;
+          position: relative;
+          z-index: 1;
+          height: auto;
+          padding-bottom: calc(353 / 530 * 100%);
+          background-color: $dominant-cl;
+          border-radius: 5px;
+          overflow: hidden;
+
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+
+      &_btn {
+        margin-top: 34px;
+      }
+
+      @include maxW(1023px) {
+        padding: 0;
+
+        &_content {
+          margin-top: 70px;
+
+          .is-pad {
+            padding: 0 var(--padd);
+          }
+
+          .is-pad-l {
+            padding-left: var(--padd);
+          }
+        }
+
+        &_list {
+          margin-top: 40px;
+          grid-template-columns: repeat(1, 1fr);
+          gap: 40px;
+        }
+
+        &_items {
+          figure {
+            padding-bottom: calc(261 / 392 * 100%);
+            border-radius: 5px 0 0 5px;
+          }
+
+          h3 {
+            margin-top: 25px;
+            font-size: 1.6rem;
+            letter-spacing: -0.48px;
+          }
+
+          p.desc {
+            margin-top: 30px;
+            font-size: 1.3rem;
+            letter-spacing: -0.26px;
+            line-height: 1.81;
+          }
+        }
+
+        &_btm {
+          margin-top: 30px;
+        }
+      }
+    }
+
     &_school {
       margin-top: 145px;
       display: grid;

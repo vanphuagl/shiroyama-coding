@@ -448,6 +448,10 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+
+    [data-fadein]:nth-of-type(2) {
+      transition-delay: 0.5s;
+    }
   }
 
   @include maxW(1023px) {
