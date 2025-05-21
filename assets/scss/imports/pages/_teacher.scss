@@ -1,3 +1,236 @@
 /* -------------------------------------------------------------------------- */
 /*                                   teacher                                  */
 /* -------------------------------------------------------------------------- */
+
+.teacherpage {
+  // ====== teacher ======
+  .teacher {
+    &_container {
+      margin-top: 120px;
+
+      @include maxW(1023px) {
+        margin-top: 75px;
+      }
+    }
+
+    &_fv {
+      &_inner {
+        display: grid;
+        grid-template-columns: 1fr 50%;
+        gap: var(--padd);
+        padding: 0 var(--padd);
+        margin-bottom: 300px;
+
+        h2 {
+          font-size: 2.8rem;
+          font-weight: 600;
+          letter-spacing: -0.56px;
+          line-height: 1.55;
+          text-align: justify;
+          font-feature-settings: "palt" 1;
+        }
+
+        p {
+          margin-top: 70px;
+          font-size: 1.6rem;
+          font-weight: 500;
+          letter-spacing: -0.48px;
+          line-height: 2;
+          text-align: justify;
+          font-feature-settings: "palt" 1;
+        }
+
+        @include maxW(1023px) {
+          display: flex;
+          flex-direction: column-reverse;
+          gap: 0;
+          padding: 0;
+          margin: 0;
+
+          h2 {
+            font-size: 2rem;
+            letter-spacing: -0.4px;
+            padding: 0 var(--padd);
+          }
+
+          p {
+            margin-top: 45px;
+            font-size: 1.3rem;
+            letter-spacing: -0.26px;
+            line-height: 1.81;
+          }
+        }
+      }
+
+      &_left {
+        position: relative;
+      }
+
+      &_subimg {
+        position: absolute;
+        bottom: -300px;
+        left: calc(0px - var(--padd));
+        width: 100%;
+
+        figure {
+          display: block;
+          position: relative;
+          z-index: 1;
+          height: auto;
+          padding-bottom: 100%;
+          aspect-ratio: 1/1;
+          background-color: $dominant-cl;
+          border-radius: 5px;
+          overflow: hidden;
+
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        @include maxW(1023px) {
+          margin-top: 40px;
+          position: initial;
+          padding-right: 80px;
+
+          figure {
+            border-radius: 0 5px 5px 0;
+          }
+        }
+      }
+
+      &_mainimg {
+        figure {
+          display: block;
+          position: relative;
+          z-index: 1;
+          height: auto;
+          padding-bottom: calc(733 / 550 * 100%);
+          background-color: $dominant-cl;
+          border-radius: 5px;
+          overflow: hidden;
+
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        @include maxW(1023px) {
+          padding-left: 80px;
+
+          figure {
+            margin-top: 40px;
+            padding-bottom: calc(445 / 334 * 100%);
+            border-radius: 5px 0 0 5px;
+          }
+        }
+      }
+
+      &_content {
+        margin-top: 75px;
+        margin-bottom: 150px;
+
+        @include maxW(1023px) {
+          margin: 0;
+          padding: 0 var(--padd);
+        }
+      }
+    }
+
+    &_mess {
+      margin-top: 145px;
+
+      &_inner {
+        margin-top: 55px;
+        display: grid;
+        grid-template-columns: 27.27% 1fr;
+        gap: var(--padd);
+      }
+
+      &_left {
+        figure {
+          display: block;
+          position: relative;
+          z-index: 1;
+          height: auto;
+          padding-bottom: calc(400 / 300 * 100%);
+          background-color: $dominant-cl;
+          border-radius: 5px;
+          overflow: hidden;
+
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+
+      &_right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
+
+        p {
+          font-size: 1.6rem;
+          font-weight: 500;
+          letter-spacing: -0.8px;
+          line-height: 2;
+          text-align: justify;
+          font-feature-settings: "palt" 1;
+        }
+      }
+
+      &_sign {
+        p {
+          text-align: right;
+        }
+      }
+
+      @include maxW(1023px) {
+        margin-top: 70px;
+
+        &_inner {
+          margin-top: 40px;
+          display: block;
+        }
+
+        &_left {
+          figure {
+            padding-bottom: 100%;
+            aspect-ratio: 1/1;
+          }
+        }
+
+        &_right {
+          margin-top: 40px;
+          display: block;
+
+          p {
+            font-size: 1.3rem;
+            letter-spacing: -0.26px;
+            line-height: 1.81;
+          }
+        }
+
+        &_sign {
+          margin-top: 40px;
+        }
+      }
+    }
+  }
+}
