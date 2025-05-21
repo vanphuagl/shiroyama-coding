@@ -5,65 +5,6 @@
 .admissionpage {
   // ===== admission =====
   .admission {
-    &_container {
-      margin-top: 115px;
-    }
-
-    &_intro {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-
-      h2 {
-        font-size: 2.8rem;
-        font-weight: 600;
-        letter-spacing: -0.56px;
-        line-height: 1.55;
-      }
-
-      &_content {
-        p {
-          font-size: 1.6rem;
-          font-weight: 500;
-          letter-spacing: -0.8px;
-          line-height: 2;
-          text-align: justify;
-          font-feature-settings: "palt" 1;
-        }
-      }
-
-      &_btn {
-        margin-top: 100px;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      @include maxW(1023px) {
-        display: block;
-
-        h2 {
-          font-size: 2rem;
-          letter-spacing: -0.4px;
-          line-height: 1.75;
-        }
-
-        &_content {
-          margin-top: 40px;
-
-          p {
-            font-size: 1.3rem;
-            letter-spacing: -0.26px;
-            line-height: 1.81;
-          }
-        }
-
-        &_btn {
-          margin-top: 67px;
-          gap: 15px;
-        }
-      }
-    }
-
     &_process {
       margin-top: 145px;
 
@@ -269,10 +210,6 @@
     }
 
     @include maxW(1023px) {
-      &_container {
-        margin-top: 75px;
-      }
-
       &_recruit {
         margin-top: 80px;
 

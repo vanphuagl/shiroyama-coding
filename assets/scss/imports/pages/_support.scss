@@ -1,3 +1,78 @@
 /* -------------------------------------------------------------------------- */
 /*                                   support                                  */
 /* -------------------------------------------------------------------------- */
+
+.supportpage {
+  // ===== support =====
+  .support {
+    &_school {
+      margin-top: 145px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 55px 40px;
+
+      &_items {
+        figure {
+          display: block;
+          position: relative;
+          z-index: 1;
+          height: auto;
+          padding-bottom: calc(227 / 340 * 100%);
+          border-radius: 5px;
+          background-color: $dominant-cl;
+          overflow: hidden;
+
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        h3 {
+          margin-top: 27px;
+          font-size: 2rem;
+          font-weight: 600;
+          letter-spacing: -0.4px;
+          line-height: 1.45;
+        }
+
+        p {
+          margin-top: 30px;
+          font-size: 1.5rem;
+          font-weight: 500;
+          letter-spacing: -0.75px;
+          line-height: 1.81;
+        }
+      }
+
+      @include maxW(1023px) {
+        margin-top: 75px;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 40px;
+
+        &_items {
+          figure {
+            padding-bottom: calc(246 / 370 * 100%);
+          }
+
+          h3 {
+            margin-top: 20px;
+            font-size: 1.6rem;
+            letter-spacing: -0.32px;
+          }
+
+          p {
+            margin-top: 20px;
+            font-size: 1.3rem;
+            letter-spacing: -0.26px;
+            line-height: 1.81;
+          }
+        }
+      }
+    }
+  }
+}
