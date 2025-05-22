@@ -1017,7 +1017,7 @@
   }
 }
 
-// ==== recruit ====
+// ===== recruit =====
 .c-recruit {
   margin-top: 150px;
 
@@ -1122,5 +1122,116 @@
       margin-top: 35px;
       width: 100%;
     }
+  }
+}
+
+// ===== swiper =====
+.c-swiper {
+  margin: 0 calc(0px - var(--padd)) 0;
+  padding: 0 var(--padd);
+  display: block;
+  overflow: hidden;
+  position: relative;
+
+  figure {
+    display: block;
+    position: relative;
+    z-index: 1;
+    height: auto;
+    padding-bottom: calc(500 / 750 * 100%);
+    background-color: $dominant-cl;
+    border-radius: 5px;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  p {
+    margin-top: 20px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: -0.42px;
+    line-height: 2;
+    text-align: justify;
+    font-feature-settings: "palt" 1;
+  }
+
+  &_navigation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &_btn {
+    font-size: 0;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    height: calc(100% - 47px);
+    background-color: transparent;
+    z-index: 3;
+    cursor: none;
+
+    &.swiper-button-disabled {
+      opacity: 1;
+      cursor: none;
+      pointer-events: auto;
+    }
+
+    &.swiper-button-prev {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &.swiper-button-next {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    &:after {
+      content: "";
+    }
+  }
+
+  @include maxW(1023px) {
+    &_btn {
+      display: none;
+    }
+
+    figure {
+      padding-bottom: calc(210 / 315 * 100%);
+    }
+
+    p {
+      margin-top: 10px;
+      font-size: 1.1rem;
+      letter-spacing: -0.33px;
+    }
+  }
+}
+.c-cursor {
+  position: fixed;
+  pointer-events: none;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  z-index: 999999999;
+  mix-blend-mode: difference;
+  transition: opacity 0.2s ease-in-out;
+
+  &.--active {
+    opacity: 1;
   }
 }

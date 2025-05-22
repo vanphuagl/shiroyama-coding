@@ -246,6 +246,60 @@ if (document.querySelector(".educationpage")) {
   mobileMediaQuery.addEventListener('change', initSwiperBasic);
 }
 
+// ===== swiper components =====
+const swiperComponents = new Swiper("[data-swiper-components]", {
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  speed: 600,
+  breakpoints: {
+    0: {
+      slidesPerView: 1.167,
+      spaceBetween: 15,
+      draggable: true,
+    },
+    1024: {
+      slidesPerView: 1.45,
+      spaceBetween: 30,
+      draggable: false,
+    },
+  },
+});
+
+// ## init custom cursor
+const initCustomCursor = () => {
+  const cursorPrev = document.querySelector('.cursor-prev');
+  const cursorNext = document.querySelector('.cursor-next');
+  const swiper = document.querySelector('[data-swiper-components]');
+
+  if (!cursorPrev || !cursorNext || !swiper) return;
+
+  document.addEventListener('mousemove', (e) => {
+    cursorPrev.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    cursorNext.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+
+    const target = e.target;
+    if (target.closest('.swiper-button-next')) {
+      cursorNext.classList.add('--active');
+      cursorPrev.classList.remove('--active');
+    } else if (target.closest('.swiper-button-prev')) {
+      cursorPrev.classList.add('--active');
+      cursorNext.classList.remove('--active');
+    } else {
+      cursorPrev.classList.remove('--active');
+      cursorNext.classList.remove('--active');
+    }
+  });
+
+  // Ẩn cursor khi chuột rời swiper
+  swiper.addEventListener('mouseleave', () => {
+    cursorPrev.classList.remove('--active');
+    cursorNext.classList.remove('--active');
+  });
+}
+initCustomCursor();
+
 // ### ===== DOMCONTENTLOADED ===== ###
 window.addEventListener("pageshow", () => {
   document.body.classList.remove("fadeout");
