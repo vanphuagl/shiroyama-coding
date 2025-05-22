@@ -40,6 +40,14 @@
   }
 }
 
+/* fadetab */
+@keyframes fadeTab {
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* lazy load */
 .lazy {
   opacity: 0;

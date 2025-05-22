@@ -196,6 +196,56 @@ if (document.querySelector("[data-accordion-btn]")) {
   }
 }
 
+// ===== handle tabs change =====
+const initTabs = () => {
+  const tabs = document.querySelectorAll('[data-tabs-items]');
+  const contents = document.querySelectorAll('[data-tabs-content]');
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => {
+      // remove all class items/content
+      tabs.forEach(t => t.classList.remove('--active'));
+      contents.forEach(c => c.classList.remove('--active'));
+
+      // add class item/click show/content
+      tab.classList.add('--active');
+      contents[index].classList.add('--active');
+    });
+  });
+}
+initTabs();
+
+// ====== education page ======
+if (document.querySelector(".educationpage")) {
+  // ===== swiper education ======
+  const mobileMediaQuery = window.matchMedia('(max-width: 1023px)');
+  let swiperBasic = null;
+  const initSwiperBasic = () => {
+    if (mobileMediaQuery.matches && !swiperBasic) {
+      swiperBasic = new Swiper("[data-basic-swiper]", {
+        breakpoints: {
+          0: {
+            slidesPerView: 1.164,
+            spaceBetween: 20,
+            allowTouchMove: true,
+            draggable: true,
+          },
+          1024: {
+            slidesPerView: 1,
+            draggable: false,
+            allowTouchMove: false,
+          },
+        },
+      });
+    } else if (!mobileMediaQuery.matches && swiperBasic) {
+      swiperBasic.destroy(true, true);
+      swiperBasic = null;
+    }
+  };
+  initSwiperBasic();
+  mobileMediaQuery.addEventListener('change', initSwiperBasic);
+}
+
 // ### ===== DOMCONTENTLOADED ===== ###
 window.addEventListener("pageshow", () => {
   document.body.classList.remove("fadeout");

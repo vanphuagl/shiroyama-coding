@@ -91,21 +91,33 @@ const swiperPhy = new Swiper("[data-phy-swiper]", {
 });
 
 // ===== feature =====
-const swiperFeature = new Swiper("[data-feature-swiper]", {
-  breakpoints: {
-    0: {
-      slidesPerView: 1.167,
-      spaceBetween: 14,
-      allowTouchMove: true,
-      draggable: true,
-    },
-    1024: {
-      slidesPerView: 1,
-      draggable: false,
-      allowTouchMove: false,
-    },
-  },
-});
+const mobileMediaQuery = window.matchMedia('(max-width: 1023px)');
+let swiperFeature = null;
+const initSwiperFeature = () => {
+  if (mobileMediaQuery.matches && !swiperFeature) {
+    swiperFeature = new Swiper("[data-feature-swiper]", {
+      breakpoints: {
+        0: {
+          slidesPerView: 1.167,
+          spaceBetween: 14,
+          allowTouchMove: true,
+          draggable: true,
+        },
+        1024: {
+          slidesPerView: 1,
+          draggable: false,
+          allowTouchMove: false,
+        },
+      },
+    });
+  } else if (!mobileMediaQuery.matches && swiperFeature) {
+    swiperFeature.destroy(true, true);
+    swiperFeature = null;
+  }
+};
+initSwiperFeature();
+mobileMediaQuery.addEventListener('change', initSwiperFeature);
+
 
 // ### ===== DOMCONTENTLOADED ===== ###
 window.addEventListener("DOMContentLoaded", homepage);
