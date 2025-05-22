@@ -156,5 +156,110 @@
         }
       }
     }
+
+    &_event {
+      &_items {
+        margin-top: 70px;
+        &:first-child {
+          margin-top: initial;
+        }
+      }
+
+      &_inner {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+      }
+
+      &_month {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 25px;
+
+        span {
+          display: block;
+          width: 20px;
+          height: 3px;
+          background-color: $yellow-cl;
+          border-radius: 10px;
+        }
+
+        p {
+          font-size: 2rem;
+          font-weight: 600;
+        }
+      }
+
+      &_content {
+        h4 {
+          margin-top: 10px;
+          font-size: 1.6rem;
+          font-weight: 500;
+          letter-spacing: -0.32px;
+          line-height: 1.56;
+          text-align: justify;
+          font-feature-settings: "palt" 1;
+        }
+
+        figure {
+          display: block;
+          position: relative;
+          z-index: 1;
+          height: auto;
+          padding-bottom: calc(171 / 255 * 100%);
+          background-color: $dominant-cl;
+          overflow: hidden;
+          border-radius: 5px;
+
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+
+      @include maxW(1023px) {
+        &_items {
+          margin-top: 40px;
+        }
+
+        &_inner {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 23px 14px;
+        }
+
+        &_month {
+          gap: 7px;
+          margin-bottom: 15px;
+
+          span {
+            width: 15px;
+            height: 2px;
+          }
+
+          p {
+            font-size: 1.6rem;
+          }
+        }
+
+        &_content {
+          h4 {
+            margin-top: 8px;
+            font-size: 1.3rem;
+            letter-spacing: -0.26px;
+            line-height: 1.69;
+          }
+
+          figure {
+            padding-bottom: calc(120 / 178 * 100%);
+          }
+        }
+      }
+    }
   }
 }
