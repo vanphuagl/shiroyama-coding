@@ -11,6 +11,8 @@ const init = () => {
   });
 };
 
+const mobileMediaQuery = window.matchMedia('(max-width: 1023px)');
+
 // ===== app height =====
 const appHeight = () => {
   const doc = document.documentElement;
@@ -164,21 +166,6 @@ const fadeIn = () => {
   window.addEventListener(evt, fadeIn);
 });
 
-// ====== news page ======
-if (document.querySelector("[data-news-category]")) {
-  const categoryBtn = document.querySelector("[data-news-btn]");
-  const categoryPanel = document.querySelector("[data-news-group]");
-  categoryBtn.addEventListener("click", function () {
-    console.log("hello");
-    this.classList.toggle("--active");
-    if (categoryPanel.style.maxHeight) {
-      categoryPanel.style.maxHeight = null;
-    } else {
-      categoryPanel.style.maxHeight = categoryPanel.scrollHeight + "px";
-    }
-  });
-}
-
 // ===== accordion ======
 if (document.querySelector("[data-accordion-btn]")) {
   const accordion = document.querySelectorAll("[data-accordion-btn]");
@@ -214,37 +201,6 @@ const initTabs = () => {
   });
 }
 initTabs();
-
-// ====== education page ======
-if (document.querySelector(".educationpage")) {
-  // ===== swiper education ======
-  const mobileMediaQuery = window.matchMedia('(max-width: 1023px)');
-  let swiperBasic = null;
-  const initSwiperBasic = () => {
-    if (mobileMediaQuery.matches && !swiperBasic) {
-      swiperBasic = new Swiper("[data-basic-swiper]", {
-        breakpoints: {
-          0: {
-            slidesPerView: 1.164,
-            spaceBetween: 20,
-            allowTouchMove: true,
-            draggable: true,
-          },
-          1024: {
-            slidesPerView: 1,
-            draggable: false,
-            allowTouchMove: false,
-          },
-        },
-      });
-    } else if (!mobileMediaQuery.matches && swiperBasic) {
-      swiperBasic.destroy(true, true);
-      swiperBasic = null;
-    }
-  };
-  initSwiperBasic();
-  mobileMediaQuery.addEventListener('change', initSwiperBasic);
-}
 
 // ===== swiper components =====
 const swiperComponents = new Swiper("[data-swiper-components]", {
@@ -299,6 +255,48 @@ const initCustomCursor = () => {
   });
 }
 initCustomCursor();
+
+// ====== news page ======
+if (document.querySelector("[data-news-category]")) {
+  const categoryBtn = document.querySelector("[data-news-btn]");
+  const categoryPanel = document.querySelector("[data-news-group]");
+  categoryBtn.addEventListener("click", function () {
+    console.log("hello");
+    this.classList.toggle("--active");
+    if (categoryPanel.style.maxHeight) {
+      categoryPanel.style.maxHeight = null;
+    } else {
+      categoryPanel.style.maxHeight = categoryPanel.scrollHeight + "px";
+    }
+  });
+}
+
+// ====== education/daily swiper ======
+let swiperBasic = null;
+const initSwiperBasic = () => {
+  if (mobileMediaQuery.matches && !swiperBasic) {
+    swiperBasic = new Swiper("[data-basic-swiper]", {
+      breakpoints: {
+        0: {
+          slidesPerView: 1.164,
+          spaceBetween: 20,
+          allowTouchMove: true,
+          draggable: true,
+        },
+        1024: {
+          slidesPerView: 1,
+          draggable: false,
+          allowTouchMove: false,
+        },
+      },
+    });
+  } else if (!mobileMediaQuery.matches && swiperBasic) {
+    swiperBasic.destroy(true, true);
+    swiperBasic = null;
+  }
+};
+initSwiperBasic();
+mobileMediaQuery.addEventListener('change', initSwiperBasic);
 
 // ### ===== DOMCONTENTLOADED ===== ###
 window.addEventListener("pageshow", () => {

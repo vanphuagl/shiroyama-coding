@@ -110,6 +110,8 @@
       margin-top: 150px;
 
       &_list {
+        position: sticky;
+        top: 50px;
         padding-right: 20px;
 
         li {
