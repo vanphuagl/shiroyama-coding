@@ -1,3 +1,104 @@
 /* -------------------------------------------------------------------------- */
 /*                               education page                               */
 /* -------------------------------------------------------------------------- */
+
+.educationpage {
+  // ====== education ======
+  .education {
+    &_container {
+      margin-top: 115px;
+    }
+
+    &_fv {
+      figure {
+        margin-top: 70px;
+        display: block;
+        position: relative;
+        z-index: 1;
+        height: auto;
+        padding-bottom: calc(600 / 1100 * 100%);
+        background-color: $dominant-cl;
+        border-radius: 5px;
+        overflow: hidden;
+
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &_heading {
+        h2 {
+          font-size: 2.8rem;
+          font-weight: 600;
+          letter-spacing: -0.56px;
+          line-height: 1.5;
+          text-align: justify;
+          font-feature-settings: "palt" 1;
+        }
+      }
+
+      &_group {
+        margin-top: 80px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--padd);
+        align-items: flex-start;
+      }
+
+      &_right {
+        margin-top: 5px;
+        grid-column: 2/5;
+
+        p {
+          font-size: 1.6rem;
+          font-weight: 500;
+          letter-spacing: -0.8px;
+          line-height: 2;
+          text-align: justify;
+          font-feature-settings: "palt" 1;
+        }
+      }
+    }
+
+    @include maxW(1023px) {
+      &_container {
+        margin-top: 75px;
+      }
+
+      &_fv {
+        figure {
+          margin-top: 40px;
+          padding-bottom: calc(247 / 370 * 100%);
+        }
+
+        &_heading {
+          margin-top: 70px;
+          h2 {
+            font-size: 2rem;
+            letter-spacing: -0.4px;
+          }
+        }
+
+        &_group {
+          margin-top: 45px;
+          display: block;
+        }
+
+        &_right {
+          margin-top: initial;
+
+          p {
+            font-size: 1.3rem;
+            letter-spacing: -0.26px;
+            line-height: 1.81;
+          }
+        }
+      }
+    }
+  }
+}
